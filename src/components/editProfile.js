@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 
 
-class LogIn extends Component {
+class EditProfile extends Component {
   render() {
     return(
       <div>
-        <p> Login</p>
+        <p> Edit Profile</p>
 
 
       </div>
@@ -13,4 +13,5 @@ class LogIn extends Component {
   }
 }
 
-export default LogIn;
+
+export default EditProfile;
