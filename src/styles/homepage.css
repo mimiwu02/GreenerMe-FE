@@ -1,0 +1,26 @@
+body {
+  background-image: url("http://i751.photobucket.com/albums/xx156/Moirae54/Homepage.jpg");
+  background-size: cover;
+  display: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.nav {
+  position: fixed;
+  display: absolute;
+  top: 70%;
+  right: 40%;
+  z-index: 1000;
+}
+
+.loginBtn, .signupBtn {
+  display: absolute;
+  font-size: 40px;
+  margin: 10px;
+  z-index: 1000;
+  border-radius: 5px;
+  background-color: transparent;
+  font-family: 'Julius Sans One', sans-serif;
+}
