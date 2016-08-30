@@ -38,4 +38,35 @@ findPost: function(zip) {
   return response.json();
 });
 },
+
+delete: function(id){
+  console.log(id)
+  const fetchSettings = {
+    method: 'DELETE'
+  }
+  return fetch('http://localhost:3000/messages/'+ id + '.json', fetchSettings).then((response) => {
+    return response.json();
+  });
+},
+
+update: function(post) {
+  const updatePost = {
+    name: post.name,
+    email: post.email,
+    zip: post.zip,
+    title: post.title,
+    content: post.content
+  }
+  console.log(updatePost);
+    const fetchSettings = {
+    method: "PUT",
+    headers: new Headers({
+        'Content-Type': 'application/json'
+      }),
+    body: JSON.stringify(updatePost)
+  }
+ return fetch('http://localhost:3000/messages/' + post.zip, fetchSettings).then((response) => {
+  return response.json();
+});
+},
 }

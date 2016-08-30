@@ -1,15 +1,23 @@
 import React, {Component} from 'react';
 import "../styles/dashboard.css";
-import { Button } from 'react-bootstrap';
+import { Button, ListGroup, ListGroupItem } from 'react-bootstrap';
 import AllPosts from '../utils/helpers';
 import Timestamp from 'react-timestamp';
+// import DeleteOne from './delete';
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
     console.log(props);
     this.state = {
-      response: []
+      // id: "",
+      response: [],
+      status: [],
+      name: "",
+      email: "",
+      zip: "",
+      title: "",
+      content: ""
     };
   }
 
@@ -29,25 +37,34 @@ handleClick(event) {
   })
 }
 
+onClick(event){
+  AllPosts.delete(event.target.value).then(res => {
+    console.log("Deleted!");
+  });
+}
+
+
   render() {
     const postings = this.state.response;
     const index = 0;
     return(
       <div>
         <Button className="viewBtn" bsStyle="success" bsSize="small" onClick={this.handleClick.bind(this)}>View Lastest Posts</Button>
-          <hr></hr>
-          <ul>
-              {postings.map(function (posting, index) {
-                return <li key={index}>
+          <ListGroup>
+              {postings.map((posting, index) => {
+                return <ListGroupItem key={index}>
                   <p><b><Timestamp time={posting.created_at} format='full'/></b></p>
                   <p>Name: {posting.name}</p>
                   <p>Email: {posting.email}</p>
                   <p>Zip: {posting.zip}</p>
                   <p>Title: {posting.title}</p>
                   <p>Post: {posting.content}</p><br/>
-                </li>
+                  <p>id: {posting.id}</p>
+                  <button className='deleteBtn' value={posting.id} onClick={(event) => this.onClick(event)}>Delete</button>
+                </ListGroupItem>
               })}
-          </ul>
+
+          </ListGroup>
       </div>
     );
   }

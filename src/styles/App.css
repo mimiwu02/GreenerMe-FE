@@ -1,4 +1,5 @@
 .App {
+  margin: auto;
   text-align: center;
   border: grey 5px double;
   width: 80%;

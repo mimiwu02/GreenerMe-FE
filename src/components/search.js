@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, ListGroup, ListGroupItem } from 'react-bootstrap';
 import SearchPost from '../utils/helpers';
+import Timestamp from 'react-timestamp';
 
 class Search extends Component {
   constructor(props){
@@ -28,24 +29,25 @@ class Search extends Component {
     const postings = this.state.response;
     return(
       <div>
-        <p>Search by zipcode:</p>
+        <p>Search for others who are trading in your area by zipcode:</p>
         <input onChange={this.handleChange.bind(this)} />
 
         <Button bsStyle="primary" bsSize="small" onClick={this.handleSearch.bind(this)}>search</Button>
         <h3>{this.state.searchText}</h3>
-        <ul>
+        <ListGroup>
         {postings.map(function (posting, _id){
           return (
-            <li key={_id}>
+            <ListGroupItem key={_id}>
+              <p><b><Timestamp time={posting.created_at} format='full'/></b></p>
               <p>Name: {posting.name}</p>
               <p>Email: {posting.email}</p>
               <p>Zip: {posting.zip}</p>
               <p>Title: {posting.title}</p>
               <p>Post: {posting.content}</p>
-            </li>
+            </ListGroupItem>
           );
         })}
-      </ul>
+        </ListGroup>
       </div>
     );
   }
