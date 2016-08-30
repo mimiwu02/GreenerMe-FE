@@ -34,7 +34,8 @@ findPost: function(zip) {
   const fetchSettings = {
     method: "GET"
   }
- return fetch('http://localhost:3000/unicorns/'+ zip, fetchSettings).then((response) => {
+ return fetch('http://localhost:3000/messages/'+ zip, fetchSettings).then((response) => {
   return response.json();
 });
 },
+}

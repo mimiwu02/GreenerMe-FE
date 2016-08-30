@@ -1,8 +1,30 @@
 .App {
   text-align: center;
+  border: grey 5px double;
+  width: 80%;
+  height: auto;
 }
 
 .leftNav {
   text-align: center;
   margin: 20x;
+  height: 30px;
+  background-color: #28A190;
+}
+
+.navigation {
+  margin: 0;
+  padding: 0;
+}
+
+.jumbo {
+  margin: 0;
+  background-color: white;
+}
+
+.dashboard, .newPost, .search, .about {
+  margin: 20px;
+  font-family: 'Raleway', sans-serif, 700;
+  color: white;
+  font-size: 20px;
 }

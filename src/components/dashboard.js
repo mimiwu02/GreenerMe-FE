@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import "../styles/dashboard.css";
+import { Button } from 'react-bootstrap';
 import AllPosts from '../utils/helpers';
 import Timestamp from 'react-timestamp';
 
@@ -33,12 +34,18 @@ handleClick(event) {
     const index = 0;
     return(
       <div>
-        <p>Lastest Postings</p>
-        <button onClick={this.handleClick.bind(this)}>View Posts</button>
+        <Button className="viewBtn" bsStyle="success" bsSize="small" onClick={this.handleClick.bind(this)}>View Lastest Posts</Button>
           <hr></hr>
           <ul>
               {postings.map(function (posting, index) {
-                return <li key={index}>Name: {posting.name} Email: {posting.email} Zip: {posting.zip} Title: {posting.title} Post: {posting.content} Posted: <Timestamp time={posting.created_at} format='full'/></li>
+                return <li key={index}>
+                  <p><b><Timestamp time={posting.created_at} format='full'/></b></p>
+                  <p>Name: {posting.name}</p>
+                  <p>Email: {posting.email}</p>
+                  <p>Zip: {posting.zip}</p>
+                  <p>Title: {posting.title}</p>
+                  <p>Post: {posting.content}</p><br/>
+                </li>
               })}
           </ul>
       </div>

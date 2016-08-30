@@ -1,0 +1,10 @@
+ul {
+  list-style: none;
+  font-family: 'Raleway', sans-serif, 300;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.viewBtn {
+  margin-top: 50px;
+}
