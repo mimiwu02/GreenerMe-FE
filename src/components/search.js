@@ -25,6 +25,12 @@ class Search extends Component {
     this.setState({ searchText: event.target.value})
   }
 
+  onClick(event){
+    SearchPost.delete(event.target.value).then(res => {
+      console.log("Deleted!");
+    });
+  }
+
   render() {
     const postings = this.state.response;
     return(
@@ -35,7 +41,7 @@ class Search extends Component {
         <Button bsStyle="primary" bsSize="small" onClick={this.handleSearch.bind(this)}>search</Button>
         <h3>{this.state.searchText}</h3>
         <ListGroup>
-        {postings.map(function (posting, _id){
+        {postings.map((posting, _id) => {
           return (
             <ListGroupItem key={_id}>
               <p><b><Timestamp time={posting.created_at} format='full'/></b></p>
@@ -44,6 +50,7 @@ class Search extends Component {
               <p>Zip: {posting.zip}</p>
               <p>Title: {posting.title}</p>
               <p>Post: {posting.content}</p>
+              <Button bsStyle="danger" bsSize="small" className='deleteBtn' value={posting.id} onClick={(event) => this.onClick(event)}>Delete</Button>
             </ListGroupItem>
           );
         })}

@@ -6,6 +6,7 @@ import Dashboard from './components/dashboard';
 import NewPost from './components/newpost';
 import Search from './components/search';
 import About from './components/about';
+import EditPost from './components/edit';
 import './styles/index.css';
 
 // const config= {
@@ -25,6 +26,7 @@ ReactDOM.render(
             <Route path='/new' component={NewPost}/>
             <Route path='/search' component={Search}/>
             <Route path='/about' component={About}/>
+            <Route path='/edit' component={EditPost}/>
         </Route>
     </Router>
     , document.getElementById('root')

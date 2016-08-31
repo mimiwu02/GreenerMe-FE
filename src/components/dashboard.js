@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 import "../styles/dashboard.css";
+import {browserHistory} from 'react-router';
 import { Button, ListGroup, ListGroupItem } from 'react-bootstrap';
 import AllPosts from '../utils/helpers';
 import Timestamp from 'react-timestamp';
-// import DeleteOne from './delete';
+
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
     console.log(props);
     this.state = {
-      // id: "",
+      id: "",
       response: [],
-      status: [],
       name: "",
       email: "",
       zip: "",
@@ -34,13 +34,25 @@ handleClick(event) {
     this.setState({
       response: res
     })
+    console.log("id", res[0].id);
   })
 }
 
-onClick(event){
+handleDeleteClick(event){
+  event.preventDefault();
   AllPosts.delete(event.target.value).then(res => {
-    console.log("Deleted!");
+    console.log("Deleted!", res);
   });
+}
+
+const postId = res[0].id.value
+window.sessionStorage.setItem("item", postId);
+
+
+handleClickEdit(event, id){
+  console.log("clicked");
+  event.preventDefault();
+  return browserHistory.push('/edit')
 }
 
 
@@ -48,7 +60,7 @@ onClick(event){
     const postings = this.state.response;
     const index = 0;
     return(
-      <div>
+      <div></div>
         <Button className="viewBtn" bsStyle="success" bsSize="small" onClick={this.handleClick.bind(this)}>View Lastest Posts</Button>
           <ListGroup>
               {postings.map((posting, index) => {
@@ -59,9 +71,9 @@ onClick(event){
                   <p>Zip: {posting.zip}</p>
                   <p>Title: {posting.title}</p>
                   <p>Post: {posting.content}</p><br/>
-                  <p>id: {posting.id}</p>
-                  <button className='deleteBtn' value={posting.id} onClick={(event) => this.onClick(event)}>Delete</button>
-                </ListGroupItem>
+                  <Button className='deleteBtn' bsStyle="danger" bsSize="small" value={posting.id} onClick={(event) => this.handleDeleteClick(event)}>Delete</Button>
+                  <Button className='updateBtn' bsStyle="warning" bsSize="small" value={posting.id} onClick={e => this.handleClickEdit(event, posting.id)}>Edit</Button>
+        </ListGroupItem>
               })}
 
           </ListGroup>

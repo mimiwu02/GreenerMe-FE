@@ -1,0 +1,33 @@
+.container {
+  width: 60vw;
+}
+
+.img-circle {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  opacity: 1;
+}
+
+.bio {
+  padding: 10px 0px;
+  width: 75%;
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif, 300;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.bio h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #286090;
+  font-family: 'Raleway', sans-serif, 700;
+}
+
+#intro h2 {
+  font-size: 24px;
+  color: #286090;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif, 700;
+}

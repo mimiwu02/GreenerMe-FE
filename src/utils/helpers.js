@@ -49,15 +49,17 @@ delete: function(id){
   });
 },
 
+
 update: function(post) {
   const updatePost = {
     name: post.name,
     email: post.email,
     zip: post.zip,
     title: post.title,
-    content: post.content
+    post: post.content,
+    id: post.id
   }
-  console.log(updatePost);
+  console.log(post);
     const fetchSettings = {
     method: "PUT",
     headers: new Headers({
@@ -65,7 +67,7 @@ update: function(post) {
       }),
     body: JSON.stringify(updatePost)
   }
- return fetch('http://localhost:3000/messages/' + post.zip, fetchSettings).then((response) => {
+ return fetch('http://localhost:3000/messages/' + post.id, fetchSettings).then((response) => {
   return response.json();
 });
 },

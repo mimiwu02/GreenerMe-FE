@@ -60,7 +60,7 @@ class NewPost extends Component {
             onChange={(event) => this.handleNewZip(event)} /><br/>
           Title: <br/> <input placeholder="title"
             onChange={(event) => this.handleNewTitle(event)} /><br/>
-          Post: <br/><textarea placeholder="fruits or vegetables you want to trade"
+          Post: <br/><textarea placeholder="fruits or vegetables you want to exchange"
             onChange={(event) => this.handleNewContent(event)} /><br/>
 
           <Button type="submit" bsStyle="success" bsSize="small">submit</Button>
