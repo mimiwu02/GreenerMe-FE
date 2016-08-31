@@ -78,4 +78,17 @@ update: function(post) {
   return response.json();
 });
 },
+
+// firebase for user management
+getCurrentUser: (uid) => {
+  const fetchSettings = {method: 'GET'};
+    return fetch(`https://greenerme-99b95.firebaseio.com/users/${uid}.json`, fetchSettings)
+    .then(res => res.json())
+   },
+
+updateCurrentUser: (uid, data) => {
+  const fetchSettings = {method: 'PATCH', body: JSON.stringify(data)};
+    return fetch(`https://greenerme-99b95.firebaseio.com/users/${uid}.json`, fetchSettings)
+    .then(res => res.json())
+   },
 }

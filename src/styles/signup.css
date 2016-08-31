@@ -1,0 +1,38 @@
+.fieldContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+h5 {
+  text-align: left;
+}
+
+.signUpWrapper {
+  background-size: cover;
+  margin-top: 3cm;
+  flex-direction: column;
+}
+
+
+.sigUpInput {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0.2cm;
+}
+
+.signUpBtn {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+}
+
+.heading {
+  font-size: 24px;
+  color: #286090;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif, 700;
+  margin-top: 20px;
+}

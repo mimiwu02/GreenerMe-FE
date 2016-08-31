@@ -23,7 +23,7 @@
   background-color: white;
 }
 
-.dashboard, .newPost, .search, .about {
+.dashboard, .newPost, .search, .about, .login, .signup {
   margin: 20px;
   font-family: 'Raleway', sans-serif, 700;
   color: white;

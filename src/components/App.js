@@ -1,9 +1,28 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router'
+import { browserHistory, Link } from 'react-router'
 import { Jumbotron } from 'react-bootstrap';
+import Helpers from '../utils/helpers';
 import '../styles/App.css';
+import FirebaseHelper from '../utils/firebasehelper';
+
 
 class App extends Component {
+  constructor(props) {
+    this.state= {
+      isLoggedin: window.localStorage.getItem("uid") || "",
+      currentUser: ""
+    };
+
+    Helpers.getCurrentUser(window.localStorage.getItem("uid")).then(res => {
+      this.setState({currentUser: res.name})
+    })
+  };
+
+    handleSignOut() {
+      FirebaseHelper.logOut();
+      return browserHistory.push("/");
+    };
+    
   render() {
     return (
       <div className="App">
@@ -19,6 +38,7 @@ class App extends Component {
               <Link to='/search' className="search">Search</Link>
               <Link to='/about' className="about">About</Link>
               <Link to='/signup' className="signup">Sign Up</Link>
+              <Link to='/login' className="login">Log In</Link>
               </div>
           </div>
         </nav>
