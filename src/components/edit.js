@@ -15,14 +15,10 @@ class UpdatePost extends Component {
       zip: "",
       title: "",
       content: "",
+      id: "",
+      timestamp: ""
     };
   }
-
-let fromRoute = window.sessionStorage.getItem("item");
-  if (fromRoute){
-    console.log(fromRoute);
-  }
-
 
 updateName(event) {
   this.setState({name:event.target.value})
@@ -41,7 +37,7 @@ updateTitle(event) {
 }
 
 updateContent(event) {
-  this.setState({post: event.target.value})
+  this.setState({content: event.target.value})
 }
 
 
@@ -69,11 +65,13 @@ render() {
             onChange={(event) => this.updateTitle(event)} /><br/>
           Post: <br/><textarea placeholder="fruits or vegetables you want to exchange"
             onChange={(event) => this.updateContent(event)} /><br/>
-        <Button type="button" bsStyle="success" bsSize="small" onClick={e=>this.handleClickUpdate(event)}>submit</Button>
+        <Button type="button" bsStyle="success" bsSize="small" onClick={e=>this.handleClickUpdate(event)}>update</Button>
         </form>
     </div>
   )
   }
 }
+
+
 
 export default UpdatePost;

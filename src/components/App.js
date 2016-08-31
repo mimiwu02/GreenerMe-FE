@@ -18,6 +18,7 @@ class App extends Component {
               <Link to='/new' className="newPost">New Post</Link>
               <Link to='/search' className="search">Search</Link>
               <Link to='/about' className="about">About</Link>
+              <Link to='/signup' className="signup">Sign Up</Link>
               </div>
           </div>
         </nav>

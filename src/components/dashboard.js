@@ -35,9 +35,9 @@ handleClick(event) {
       response: res
     })
     console.log("id", res[0].id);
-    let postId = res[0].id.value;
+    let postId = res[0].id;
     if(postId){
-     window.sessionStorage.setItem("item", postId);
+     window.localStorage.setItem("item", postId);
     }
     console.log(postId);
   })
@@ -52,6 +52,13 @@ handleDeleteClick(event){
 
 
 handleClickEdit(event, id){
+  // let fromStorage = window.localStorage.getItem("item");
+  //   if (fromStorage){
+  //     console.log("edit",fromStorage);
+  //   }
+  // this.setState({
+  //   id: fromStorage
+  // })
   console.log("clicked");
   event.preventDefault();
   return browserHistory.push('/edit')
@@ -62,7 +69,7 @@ handleClickEdit(event, id){
     const postings = this.state.response;
     const index = 0;
     return(
-      <div></div>
+      <div>
         <Button className="viewBtn" bsStyle="success" bsSize="small" onClick={this.handleClick.bind(this)}>View Lastest Posts</Button>
           <ListGroup>
               {postings.map((posting, index) => {

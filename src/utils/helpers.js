@@ -56,10 +56,17 @@ update: function(post) {
     email: post.email,
     zip: post.zip,
     title: post.title,
-    post: post.content,
-    id: post.id
+    content: post.content,
+    id: post.id,
+    timestamp: post.updated_at
   }
-  console.log(post);
+
+  let fromRoute = window.localStorage.getItem("item");
+    if (fromRoute){
+      console.log("edit",fromRoute);
+    }
+
+  console.log("updatePost:", updatePost);
     const fetchSettings = {
     method: "PUT",
     headers: new Headers({
@@ -67,7 +74,7 @@ update: function(post) {
       }),
     body: JSON.stringify(updatePost)
   }
- return fetch('http://localhost:3000/messages/' + post.id, fetchSettings).then((response) => {
+ return fetch('http://localhost:3000/messages/' + fromRoute, fetchSettings).then((response) => {
   return response.json();
 });
 },

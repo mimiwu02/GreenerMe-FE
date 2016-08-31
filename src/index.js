@@ -7,15 +7,10 @@ import NewPost from './components/newpost';
 import Search from './components/search';
 import About from './components/about';
 import EditPost from './components/edit';
+import SignUp from './components/user/signup';
+import LogIn from './components/user/login';
 import './styles/index.css';
 
-// const config= {
-//     apiKey: "AIzaSyBxV9GN_N-QjF9NqMULFAHD9Y_mX9KUPgo",
-//     authDomain: "greenerme-99b95.firebaseapp.com",
-//     databaseURL: "https://greenerme-99b95.firebaseio.com",
-//     storageBucket: "greenerme-99b95.appspot.com",
-//   };
-//   firebase.initializeApp(config);
 
 
 /* browserHistory keeps track of where you are on the App */
@@ -27,6 +22,8 @@ ReactDOM.render(
             <Route path='/search' component={Search}/>
             <Route path='/about' component={About}/>
             <Route path='/edit' component={EditPost}/>
+            <Route path='/signup' component={SignUp}/>
+            <Route path='/login' component={LogIn}/>
         </Route>
     </Router>
     , document.getElementById('root')
