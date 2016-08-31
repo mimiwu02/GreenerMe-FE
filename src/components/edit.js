@@ -18,6 +18,11 @@ class UpdatePost extends Component {
     };
   }
 
+let fromRoute = window.sessionStorage.getItem("item");
+  if (fromRoute){
+    console.log(fromRoute);
+  }
+
 
 updateName(event) {
   this.setState({name:event.target.value})
@@ -39,10 +44,6 @@ updateContent(event) {
   this.setState({post: event.target.value})
 }
 
-const fromRoute = window.sessionStorage.getItem("item");
-if (fromRoute){
-  console.log(fromRoute)
-}
 
 handleClickUpdate(event){
   event.preventDefault();

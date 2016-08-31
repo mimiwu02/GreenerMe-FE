@@ -35,6 +35,11 @@ handleClick(event) {
       response: res
     })
     console.log("id", res[0].id);
+    let postId = res[0].id.value;
+    if(postId){
+     window.sessionStorage.setItem("item", postId);
+    }
+    console.log(postId);
   })
 }
 
@@ -44,9 +49,6 @@ handleDeleteClick(event){
     console.log("Deleted!", res);
   });
 }
-
-const postId = res[0].id.value
-window.sessionStorage.setItem("item", postId);
 
 
 handleClickEdit(event, id){
