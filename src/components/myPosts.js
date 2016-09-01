@@ -3,6 +3,7 @@ import "../styles/dashboard.css";
 import { browserHistory } from 'react-router';
 import { Button, ListGroup, ListGroupItem } from 'react-bootstrap';
 import MyPost from '../utils/helpers';
+import FirebaseHelper from '../utils/firebasehelper';
 import Timestamp from 'react-timestamp';
 
 
@@ -20,15 +21,6 @@ class MyPosts extends Component {
       content: "",
     };
   }
-
-
-handleAllPostings(event) {
-  MyPost.getAll().then((res) => {
-    this.setState ({
-      response: res
-    })
-  })
-}
 
 handleClick(event) {
   MyPost.getAll().then((res) => {

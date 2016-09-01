@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, FormControl } from 'react-bootstrap';
 import NewPosting from '../utils/helpers';
+import '../styles/newpost.css';
 
 
 
@@ -50,20 +51,20 @@ class NewPost extends Component {
   render() {
     return(
       <div>
-        <p className="desc">Let others know what is in your inventory and what you need in exchange</p>
-        <form onSubmit={(event) => this.handleSubmit(event)}>
-          Name: <br/> <input placeholder="full name"
-            onChange={(event) => this.handleNewName(event)} /><br/>
-          Email: <br/> <input placeholder="example@example.com"
-            onChange={(event) => this.handleNewEmail(event)} /><br/>
-          Zip: <br/> <input placeholder="zipcode"
-            onChange={(event) => this.handleNewZip(event)} /><br/>
-          Title: <br/> <input placeholder="title"
-            onChange={(event) => this.handleNewTitle(event)} /><br/>
-          Post: <br/><textarea placeholder="fruits or vegetables you want to exchange"
+        <p className="desc">Let others know what is in your inventory and what you would like in exchange</p>
+        <form className="newPostForm" onSubmit={(event) => this.handleSubmit(event)}>
+          <h5>Name:</h5><FormControl className="newInput" placeholder="full name"
+            onChange={(event) => this.handleNewName(event)} />
+          <h5>Email:</h5><FormControl className="newInput" placeholder="example@example.com"
+            onChange={(event) => this.handleNewEmail(event)} />
+          <h5>Zip:</h5> <FormControl className="newInput" placeholder="zipcode"
+            onChange={(event) => this.handleNewZip(event)} />
+          <h5>Title:</h5> <FormControl className="newInput"  placeholder="title"
+            onChange={(event) => this.handleNewTitle(event)} />
+          <h5>Post:</h5><textarea className="newTextArea" placeholder="fruits or vegetables you want to exchange"
             onChange={(event) => this.handleNewContent(event)} /><br/>
 
-          <Button type="submit" bsStyle="success" bsSize="small">submit</Button>
+          <Button className="submitButton" type="submit" bsStyle="link" bsSize="small">submit</Button>
         </form>
       </div>
     );
