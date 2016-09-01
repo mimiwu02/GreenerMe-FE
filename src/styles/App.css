@@ -25,7 +25,7 @@
   background-color: white;
 }
 
-.dashboard, .newPost, .search, .about, .login, .signup, .logout {
+.dashboard, .newPost, .search, .about, .login, .signup, .logout, .myPost {
   margin: 20px;
   font-family: 'Josefin Sans', sans-serif, 100;
   color: white;

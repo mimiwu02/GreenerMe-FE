@@ -31,6 +31,7 @@ class App extends Component {
           <div className="leftNav">
             <Link to='/dashboard' className="dashboard">All Postings</Link>
             <Link to='/new' className="newPost">New Post</Link>
+            <Link to='/mypost' className="myPost">My Posts</Link>
             <Link to='/search' className="search">Search</Link>
             <Link to='/about' className="about">About</Link>
             <Link to="/" className="logout" onClick={e => this.handleSignOut()}>Log Out</Link>

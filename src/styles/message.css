@@ -4,34 +4,37 @@
     margin: 10px;
 }
 
-h5 {
-  text-align: left;
-}
 
-.signUpWrapper {
+.messageWrapper {
   background-size: cover;
   margin-top: 3cm;
   flex-direction: column;
 }
 
 
-.sigUpInput {
-  display: flex;
+.messageInput {
   flex-direction: row;
+  padding-left: 0.2cm;
+  text-align: left;
 }
 
-.signUpBtn {
+.sendBtn {
+  display: relative;
+  margin-left: 90%;
   margin-bottom: 20px;
   margin-top: 10px;
   text-decoration: none;
   font-size: 15px;
   color: white;
+  height: 30px;
+  width: 60px;
 }
 
-.heading {
+.messageHeading {
   font-size: 24px;
-  color: #286090;
+  color: green;
   font-weight: bold;
   font-family: 'Raleway', sans-serif, 700;
   margin-top: 20px;
+  text-align: center;
 }

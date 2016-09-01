@@ -1,10 +1,26 @@
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 ul {
   list-style: none;
   font-family: 'Raleway', sans-serif, 300;
   font-size: 15px;
-  text-align: justify;
+  text-align: left;
 }
 
 .viewBtn {
   margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.deleteBtn, .updateBtn, .messageBtn {
+  font-size: 15px;
+}
+
+.desc {
+  margin-top: 10px;
+  font-size: 20px;
 }

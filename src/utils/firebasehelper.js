@@ -25,7 +25,6 @@ const firebaseUtils = {
                     uid: res.uid,
                     name: data.name,
                     zip: data.zip
-
                 })
                 window.localStorage.setItem("uid", res.uid);
                 console.info(window.localStorage.getItem("uid"));
@@ -35,7 +34,7 @@ const firebaseUtils = {
         )
     },
     logIn: (email, pass) => {
-        console.log("loggging in...", email, pass);
+        console.log("logging in...", email);
         firebase.auth().signInWithEmailAndPassword(email, pass).catch(err => {
             // Handle Errors here.
             if (err) {
@@ -55,7 +54,7 @@ const firebaseUtils = {
           return true
         } else {
           alert("You're not signed in!")
-          const path = `/log-in`
+          const path = `/login`
           return browserHistory.push(path)
         }
       });

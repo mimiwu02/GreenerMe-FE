@@ -31,7 +31,7 @@ class LogIn extends Component {
             <FormGroup controlId="formHorizontalEmail">
               <Col componentClass={ControlLabel} sm={2}>Email
               </Col>
-              <Col sm={10}>
+              <Col sm={9}>
               <FormControl type="email" placeholder="Email" onChange={(event) => this.setState({email: event.target.value})}/>
               </Col>
             </FormGroup>
@@ -40,13 +40,13 @@ class LogIn extends Component {
               <Col componentClass={ControlLabel} sm={2}>
                 Password
               </Col>
-              <Col sm={10}>
+              <Col sm={9}>
               <FormControl type="password" placeholder="Password" onChange={(event) => this.setState({password: event.target.value})}/>
               </Col>
             </FormGroup>
 
               <FormGroup>
-                <Col smOffset={2} sm={10}>
+                <Col smOffset={2} sm={9}>
                   <Button bsStyle="success" bsSize="small" onClick={(event) => this.signIn(event)}>sign in</Button>
                 </Col>
               </FormGroup>

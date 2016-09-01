@@ -65,7 +65,7 @@ render() {
             onChange={(event) => this.updateTitle(event)} /><br/>
           Post: <br/><textarea placeholder="fruits or vegetables you want to exchange"
             onChange={(event) => this.updateContent(event)} /><br/>
-        <Button type="button" bsStyle="success" bsSize="small" onClick={e=>this.handleClickUpdate(event)}>update</Button>
+          <Button type="button" bsStyle="warning" bsSize="small" onClick={e=>this.handleClickUpdate(event)}>update</Button>
         </form>
     </div>
   )

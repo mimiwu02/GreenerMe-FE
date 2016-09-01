@@ -9,6 +9,8 @@ import About from './components/about';
 import EditPost from './components/edit';
 import SignUp from './components/user/signup';
 import LogIn from './components/user/login';
+import Message from './components/message';
+import MyPosts from './components/myPosts';
 import './styles/index.css';
 
 
@@ -24,6 +26,8 @@ ReactDOM.render(
             <Route path='/edit' component={EditPost}/>
             <Route path='/signup' component={SignUp}/>
             <Route path='/login' component={LogIn}/>
+            <Route path='/message' component={Message}/>
+            <Route path='/mypost' component={MyPosts}/>
         </Route>
     </Router>
     , document.getElementById('root')
