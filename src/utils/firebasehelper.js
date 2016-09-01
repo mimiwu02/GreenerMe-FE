@@ -72,7 +72,19 @@ const firebaseUtils = {
             window.localStorage.setItem("uid", "");
             console.info("logged out!!", window.localStorage.getItem("uid"));
         });
-    }
+    },
+    // firebase for user management
+    getCurrentUser: (uid) => {
+      const fetchSettings = {method: 'GET'};
+        return fetch(`https://greenerme-99b95.firebaseio.com/users/${uid}.json`, fetchSettings)
+        .then(res => res.json())
+       },
+
+    updateCurrentUser: (uid, data) => {
+      const fetchSettings = {method: 'PATCH', body: JSON.stringify(data)};
+        return fetch(`https://greenerme-99b95.firebaseio.com/users/${uid}.json`, fetchSettings)
+        .then(res => res.json())
+       },
 };
 
-module.exports = firebaseUtils;
+export default firebaseUtils;

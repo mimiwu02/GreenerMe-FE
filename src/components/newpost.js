@@ -50,7 +50,7 @@ class NewPost extends Component {
   render() {
     return(
       <div>
-        <p>Let others know what's in your inventory and what you need in exchange</p>
+        <p>Let others know what is in your inventory and what you need in exchange</p>
         <form onSubmit={(event) => this.handleSubmit(event)}>
           Name: <br/> <input placeholder="full name"
             onChange={(event) => this.handleNewName(event)} /><br/>

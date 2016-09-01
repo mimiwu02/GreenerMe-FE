@@ -21,6 +21,7 @@ class Dashboard extends Component {
     };
   }
 
+
 handleAllPostings(event) {
   AllPosts.getAll().then((res) => {
     this.setState ({

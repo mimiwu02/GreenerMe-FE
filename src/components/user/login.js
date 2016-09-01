@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LoginUser from '../../utils/firebasehelper';
-import { Link } from 'react-router';
+import { browserHistory } from 'react-router';
 import { Button, Modal, Form, FormGroup, Col, FormControl, ControlLabel } from 'react-bootstrap';
 
 
@@ -17,7 +17,9 @@ class LogIn extends Component {
   signIn(event){
     event.preventDefault();
     LoginUser.logIn(this.state.email,this.state.password)
+    return browserHistory.push("/");
   }
+
 
   render() {
     console.log("displayName", this.state.displayName);
@@ -45,7 +47,7 @@ class LogIn extends Component {
 
               <FormGroup>
                 <Col smOffset={2} sm={10}>
-                  <Button bsStyle="success" bsSize="small" type="submit" onClick={(event) => this.signIn(event)}><Link to="/">Go</Link></Button>
+                  <Button bsStyle="success" bsSize="small" onClick={(event) => this.signIn(event)}>sign in</Button>
                 </Col>
               </FormGroup>
             </Form>

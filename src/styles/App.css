@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400|Waiting+for+the+Sunrise';
+
 .App {
   margin: auto;
   text-align: center;
@@ -23,9 +25,15 @@
   background-color: white;
 }
 
-.dashboard, .newPost, .search, .about, .login, .signup {
+.dashboard, .newPost, .search, .about, .login, .signup, .logout {
   margin: 20px;
-  font-family: 'Raleway', sans-serif, 700;
+  font-family: 'Josefin Sans', sans-serif, 100;
   color: white;
   font-size: 20px;
+}
+
+.greetings {
+  font-size: 30px;
+  margin-top: 20px;
+  font-family: 'Waiting for the Sunrise', cursive;
 }
