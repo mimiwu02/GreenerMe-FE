@@ -19,22 +19,26 @@ class MyPosts extends Component {
       zip: "",
       title: "",
       content: "",
-    };
-  }
+    }
+    FirebaseHelper.getCurrentUser(window.localStorage.getItem("uid")).then(res => {
+      this.setState({
+          currentUser: res.name
+        })
+        console.log(res.name);
+      })
+  };
 
-handleClick(event) {
-  MyPost.getAll().then((res) => {
+
+
+
+handleClick(event){
+  MyPost.findPost(this.state.currentUser).then((res) => {
     this.setState({
       response: res
     })
-    console.log("id", res[0].id);
-    let postId = res;
-    if(postId){
-     window.localStorage.setItem("item", postId);
-    }
-    console.log(postId);
   })
 }
+
 
 handleDeleteClick(event){
   event.preventDefault();
@@ -54,32 +58,24 @@ handleClickEdit(event, id){
   render() {
     const postings = this.state.response;
     const index = 0;
-
-    let match = window.localStorage.getItem("item");
-      if (match){
-        console.log("id:",match);
-      }
-
     return(
       <div>
         <Button className="viewBtn" bsStyle="success" bsSize="small" onClick={this.handleClick.bind(this)}>My Posts</Button>
           <ListGroup>
               {postings.map((posting, index) => {
-                if(posting.id === match){
                 return <ListGroupItem key={index}>
-                  <p className="desc"><b><Timestamp time={match.created_at} format='full'/></b></p>
-                  <p>Name: {match.name}</p>
-                  <p>Email: {match.email}</p>
-                  <p>Zip: {match.zip}</p>
-                  <p>Title: {match.title}</p>
-                  <p>Post: {match.content}</p><br/>
+                  <p className="desc"><b><Timestamp time={posting.created_at} format='full'/></b></p>
+                  <p>Name: {posting.name}</p>
+                  <p>Email: {posting.email}</p>
+                  <p>Zip: {posting.zip}</p>
+                  <p>Title: {posting.title}</p>
+                  <p>Post: {posting.content}</p><br/>
                   <div className="buttons">
                     <Button className='deleteBtn' bsStyle="link" bsSize="small" value={posting.id} onClick={(event) => this.handleDeleteClick(event)}>Delete</Button>
                     <Button className='updateBtn' bsStyle="link" bsSize="small" value={posting.id} onClick={e => this.handleClickEdit(event, posting.id)}>Edit</Button>
 
                   </div>
                 </ListGroupItem>
-              }
               })}
 
           </ListGroup>

@@ -17,6 +17,7 @@ class App extends Component {
       this.setState({currentUser: res.name})
     })
   };
+    
 
     handleSignOut() {
       FirebaseHelper.logOut(event);
@@ -43,7 +44,7 @@ class App extends Component {
         <nav className="navigation">
           <div className="navBar">
           <div className="leftNav">
-            <Link to='/login' className="login">Log In</Link>
+            <Link to='/login' className="login" >Log In</Link>
             <Link to='/signup' className="signup">Sign Up</Link>
             <Link to='/about' className="about">About</Link>
             </div>

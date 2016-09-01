@@ -1,24 +1,20 @@
-div {
-  list-style: none;
-}
-
-.submitButton {
+.updateButton {
   margin-top: 10px;
   margin-left: 55%;
   font-size: 15px;
 }
 
-.newPostForm {
+.updatePostForm {
   text-align: left;
   margin-left: 28%;
   margin-top: 40px;
 }
 
-.newTextArea {
+.updateTextArea {
   width:500px;
   height:300px;
 }
 
-.newInput {
+.updateInput {
   width: 500px;
 }

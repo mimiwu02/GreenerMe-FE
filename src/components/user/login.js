@@ -14,7 +14,8 @@ class LogIn extends Component {
     }
   }
 
-  signIn(event){
+
+signIn(event){
     event.preventDefault();
     LoginUser.logIn(this.state.email,this.state.password)
     return browserHistory.push("/");

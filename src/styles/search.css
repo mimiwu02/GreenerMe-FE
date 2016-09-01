@@ -1,4 +1,9 @@
-.delete {
-  font-size: 15px;
-  margin-left: 50%;
+.searchButton{
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.zipSearch {
+  width: 200px;
+  margin:auto;
 }

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import "../styles/dashboard.css";
-import { Button } from 'react-bootstrap';
+import { Button, FormControl } from 'react-bootstrap';
 import UpdateEntry from '../utils/helpers';
-
+import '../styles/updatepost.css';
 
 class UpdatePost extends Component {
   constructor(props) {
@@ -54,18 +54,19 @@ render() {
   console.log(posts);
   return(
     <div className="UpdatePost">
-        <form>
-          Name: <br/> <input placeholder="new name"
+      <p className="desc">Update your post here:</p>
+        <form className="updatePostForm">
+          <h5>Name:</h5><FormControl className="updateInput" placeholder="new name"
             onChange={(event) => this.updateName(event)} /><br/>
-          Email: <br/><input placeholder="new email"
+          <h5>Email:</h5><FormControl className="updateInput" placeholder="new email"
             onChange={(event) => this.updateEmail(event)} /><br/>
-          Zip: <br/><input placeholder="new zip"
+          <h5>Zip:</h5><FormControl className="updateInput" placeholder="new zip"
             onChange={(event) => this.updateZip(event)} /><br/>
-          Title: <br/><input placeholder="new title"
+          <h5>Title:</h5><FormControl className="updateInput" placeholder="new title"
             onChange={(event) => this.updateTitle(event)} /><br/>
-          Post: <br/><textarea placeholder="fruits or vegetables you want to exchange"
+          <h5>Post:</h5><textarea className="updateTextArea" placeholder="fruits or vegetables you want to exchange"
             onChange={(event) => this.updateContent(event)} /><br/>
-          <Button type="button" bsStyle="warning" bsSize="small" onClick={e=>this.handleClickUpdate(event)}>update</Button>
+          <Button className="updateButton" type="button" bsStyle="link" bsSize="small" value={posts.id} onClick={e=>this.handleClickUpdate(event)}>update</Button>
         </form>
     </div>
   )

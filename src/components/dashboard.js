@@ -36,20 +36,6 @@ handleClick(event) {
   })
 }
 
-handleDeleteClick(event){
-  event.preventDefault();
-  AllPosts.delete(event.target.value).then(res => {
-    console.log("Deleted!", res);
-  });
-}
-
-
-handleClickEdit(event, id){
-  console.log("clicked");
-  event.preventDefault();
-  return browserHistory.push('/edit')
-}
-
 handleClickMessage(event){
   event.preventDefault();
   browserHistory.push('/message');
@@ -71,8 +57,6 @@ handleClickMessage(event){
                   <p>Title: {posting.title}</p>
                   <p>Post: {posting.content}</p><br/>
                   <div className="buttons">
-                    <Button className='deleteBtn' bsStyle="link" bsSize="small" value={posting.id} onClick={(event) => this.handleDeleteClick(event)}>Delete</Button>
-                    <Button className='updateBtn' bsStyle="link" bsSize="small" value={posting.id} onClick={e => this.handleClickEdit(event, posting.id)}>Edit</Button>
                     <Button className='messageBtn' bsStyle="link" bsSize="small" value={posting.id} onClick={e => this.handleClickMessage(event, posting.id)}>Message</Button>
                   </div>
                 </ListGroupItem>

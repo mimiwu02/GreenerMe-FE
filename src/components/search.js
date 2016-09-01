@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Button, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Button, ListGroup, ListGroupItem, FormControl } from 'react-bootstrap';
 import SearchPost from '../utils/helpers';
 import Timestamp from 'react-timestamp';
 import "../styles/search.css";
@@ -16,7 +16,7 @@ class Search extends Component {
 
 
   handleSearch(event) {
-    SearchPost.findPost(this.state.searchText).then((res) => {
+    SearchPost.findByZip(this.state.searchText).then((res) => {
       this.setState({
         response:res
       })
@@ -32,10 +32,10 @@ class Search extends Component {
     const postings = this.state.response;
     return(
       <div>
-        <p className="desc">Search for others who are trading in your area by zipcode:</p>
-        <input onChange={this.handleChange.bind(this)} />
+        <p className="desc">Search for others who are trading in your area by zip code:</p>
+        <FormControl className="zipSearch" placeholder="zip code" onChange={this.handleChange.bind(this)} />
 
-        <Button bsStyle="primary" bsSize="small" onClick={this.handleSearch.bind(this)}>search</Button>
+        <Button className="searchButton" bsStyle="link" bsSize="small" onClick={this.handleSearch.bind(this)}>search</Button>
         <h3>{this.state.searchText}</h3>
         <ListGroup>
         {postings.map((posting, _id) => {

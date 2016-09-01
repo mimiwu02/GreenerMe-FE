@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Button, FormControl } from 'react-bootstrap';
 import NewPosting from '../utils/helpers';
+import { browserHistory } from 'react-router';
 import '../styles/newpost.css';
 
 
@@ -45,7 +46,9 @@ class NewPost extends Component {
         response: res.data
       })
     })
+    return browserHistory.push("/dashboard");
   }
+
 
 
   render() {
