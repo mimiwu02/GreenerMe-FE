@@ -49,7 +49,7 @@ handleClickMessage(event){
         <Button className="viewBtn" bsStyle="primary" bsSize="small" onClick={this.handleClick.bind(this)}>View Lastest Posts</Button>
           <ListGroup>
               {postings.map((posting, index) => {
-                return <ListGroupItem key={index}>
+                return <ListGroupItem className="postListings" key={index}>
                   <p className="desc"><b><Timestamp time={posting.created_at} format='full'/></b></p>
                   <p>Name: {posting.name}</p>
                   <p>Email: {posting.email}</p>

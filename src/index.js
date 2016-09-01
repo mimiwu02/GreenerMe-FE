@@ -11,6 +11,7 @@ import SignUp from './components/user/signup';
 import LogIn from './components/user/login';
 import Message from './components/message';
 import MyPosts from './components/myPosts';
+import Weather from './components/weather';
 import './styles/index.css';
 
 
@@ -28,6 +29,7 @@ ReactDOM.render(
             <Route path='/login' component={LogIn}/>
             <Route path='/message' component={Message}/>
             <Route path='/mypost' component={MyPosts}/>
+            <Route path='/weather' component={Weather}/>
         </Route>
     </Router>
     , document.getElementById('root')

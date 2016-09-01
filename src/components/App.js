@@ -17,7 +17,7 @@ class App extends Component {
       this.setState({currentUser: res.name})
     })
   };
-    
+
 
     handleSignOut() {
       FirebaseHelper.logOut(event);
@@ -34,6 +34,7 @@ class App extends Component {
             <Link to='/new' className="newPost">New Post</Link>
             <Link to='/mypost' className="myPost">My Posts</Link>
             <Link to='/search' className="search">Search</Link>
+            <Link to='/weather' className="weather">Weather Forecast</Link>
             <Link to='/about' className="about">About</Link>
             <Link to="/" className="logout" onClick={e => this.handleSignOut()}>Log Out</Link>
           </div>
