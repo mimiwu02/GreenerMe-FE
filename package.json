@@ -7,7 +7,11 @@
   },
   "dependencies": {
     "axios": "^0.14.0",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.0",
+    "express": "^4.14.0",
     "firebase": "^3.3.0",
+    "path": "^0.12.7",
     "react": "^15.3.1",
     "react-bootstrap": "^0.30.3",
     "react-dom": "^15.3.1",
@@ -15,11 +19,16 @@
     "react-timestamp": "^3.0.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/config/eslint.js"
+  },
+  "main": "Server.js",
+  "engines": {
+    "node": "6.4.0",
+    "npm": "3.10.3"
   }
 }
