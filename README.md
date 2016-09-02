@@ -38,3 +38,5 @@ Greener App is a tool for anyone who wants to eat healthier. It promotes a commu
 
 ##Secondary
 1. In house emailing capability using Rails (will complete for next iteration of this app)
+
+![Alt text](/Users/MimiWu/Desktop/greenerme.png)
