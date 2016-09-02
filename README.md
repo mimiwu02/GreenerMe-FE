@@ -45,3 +45,5 @@ Greener App is a tool for anyone who wants to eat healthier. It promotes a commu
 ##Links:
 FE: https://fathomless-peak-74407.herokuapp.com/
 BE: https://stark-coast-47883.herokuapp.com/
+
+Note: Manually refresh page after login to see changes. 
