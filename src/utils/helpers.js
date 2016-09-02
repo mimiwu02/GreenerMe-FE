@@ -43,7 +43,7 @@ findByZip: function(zip) {
   const fetchSettings = {
     method: "GET"
   }
- return fetch('https://stark-coast-47883.herokuapp.com/'+ zip, fetchSettings).then((response) => {
+ return fetch('https://stark-coast-47883.herokuapp.com/messages/'+ zip, fetchSettings).then((response) => {
   return response.json();
 });
 },
