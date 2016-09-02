@@ -4,7 +4,7 @@ getAll: function(){
   const fetchSettings = {
     method: "GET"
   }
-  return fetch('http://localhost:3000/messages',fetchSettings).then((response) => {
+  return fetch('https://fathomless-peak-74407.herokuapp.com/messages',fetchSettings).then((response) => {
    return response.json();
 });
 },
@@ -25,7 +25,7 @@ addPost: function(post){
       }),
       body:JSON.stringify(newPost)
     }
-    return fetch('http://localhost:3000/messages/new', fetchSettings).then((response) => {
+    return fetch('https://fathomless-peak-74407.herokuapp.com/messages/new', fetchSettings).then((response) => {
       return response.json();
     });
 },
@@ -34,7 +34,7 @@ findPost: function(name) {
   const fetchSettings = {
     method: "GET"
   }
- return fetch('http://localhost:3000/messages/'+ name, fetchSettings).then((response) => {
+ return fetch('https://fathomless-peak-74407.herokuapp.com/messages/'+ name, fetchSettings).then((response) => {
   return response.json();
 });
 },
@@ -43,7 +43,7 @@ findByZip: function(zip) {
   const fetchSettings = {
     method: "GET"
   }
- return fetch('http://localhost:3000/messages/post/'+ zip, fetchSettings).then((response) => {
+ return fetch('https://fathomless-peak-74407.herokuapp.com/'+ zip, fetchSettings).then((response) => {
   return response.json();
 });
 },
@@ -53,7 +53,7 @@ delete: function(id){
   const fetchSettings = {
     method: 'DELETE'
   }
-  return fetch('http://localhost:3000/messages/'+ id + '.json', fetchSettings).then((response) => {
+  return fetch('https://fathomless-peak-74407.herokuapp.com/messages/'+ id + '.json', fetchSettings).then((response) => {
     return response.json();
   });
 },
@@ -83,7 +83,7 @@ update: function(post) {
       }),
     body: JSON.stringify(updatePost)
   }
- return fetch('http://localhost:3000/messages/' + fromRoute, fetchSettings).then((response) => {
+ return fetch('https://fathomless-peak-74407.herokuapp.com/messages/' + fromRoute, fetchSettings).then((response) => {
   return response.json();
 });
 },
