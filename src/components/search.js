@@ -35,7 +35,7 @@ class Search extends Component {
         <p className="desc">Search for others who are trading in your area by zip code:</p>
         <FormControl className="zipSearch" placeholder="zip code" onChange={this.handleChange.bind(this)} />
 
-        <Button className="searchButton" bsStyle="link" bsSize="small" onClick={this.handleSearch.bind(this)}>search</Button>
+        <Button className="searchButton" bsStyle="warning" bsSize="small" onClick={this.handleSearch.bind(this)}>search</Button>
         <h3>{this.state.searchText}</h3>
         <ListGroup>
         {postings.map((posting, _id) => {

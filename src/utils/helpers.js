@@ -83,7 +83,7 @@ update: function(post) {
       }),
     body: JSON.stringify(updatePost)
   }
- return fetch('hhttps://stark-coast-47883.herokuapp.com/messages/' + fromRoute, fetchSettings).then((response) => {
+ return fetch('https://stark-coast-47883.herokuapp.com/messages/' + fromRoute, fetchSettings).then((response) => {
   return response.json();
 });
 },
