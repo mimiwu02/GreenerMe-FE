@@ -27,7 +27,11 @@ class Search extends Component {
     this.setState({ searchText: event.target.value})
   }
 
-
+  handleClickMessage(event){
+    event.preventDefault();
+    browserHistory.push('/message');
+  }
+  
   render() {
     const postings = this.state.response;
     return(
@@ -47,6 +51,9 @@ class Search extends Component {
               <p>Zip: {posting.zip}</p>
               <p>Title: {posting.title}</p>
               <p>Post: {posting.content}</p>
+              <div className="buttons">
+                  <Button className='messageBtn' bsStyle="link" bsSize="small" value={posting.id} onClick={e => this.handleClickMessage(event, posting.id)}>Message</Button>
+              </div>
             </ListGroupItem>
           );
         })}
