@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Button, ListGroup, ListGroupItem, FormControl } from 'react-bootstrap';
 import SearchPost from '../utils/helpers';
 import Timestamp from 'react-timestamp';
+import {browserHistory} from 'react-router';
 import "../styles/search.css";
 
 class Search extends Component {
@@ -31,7 +32,7 @@ class Search extends Component {
     event.preventDefault();
     browserHistory.push('/message');
   }
-  
+
   render() {
     const postings = this.state.response;
     return(
