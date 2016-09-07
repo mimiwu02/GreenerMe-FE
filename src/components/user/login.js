@@ -12,16 +12,12 @@ class LogIn extends Component {
       password : "",
       displayName: window.localStorage.getItem("displayName"),
     };
-    FirebaseHelper.getCurrentUser(window.localStorage.getItem("uid")).then(res => {
-      this.setState({currentUser: res.name})
-    })
   };
 
 
-signIn(event){
+signIn(event, email, password){
     event.preventDefault();
     FirebaseHelper.logIn(this.state.email,this.state.password);
-    return browserHistory.push("/");
   };
 
 
