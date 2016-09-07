@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LoginUser from '../../utils/firebasehelper';
+import FirebaseHelper from '../../utils/firebasehelper';
 import { browserHistory, Link } from 'react-router';
 import { Button, Modal, Form, FormGroup, Col, FormControl, ControlLabel } from 'react-bootstrap';
 
@@ -11,14 +11,18 @@ class LogIn extends Component {
       email : "",
       password : "",
       displayName: window.localStorage.getItem("displayName"),
-    }
-  }
+    };
+    FirebaseHelper.getCurrentUser(window.localStorage.getItem("uid")).then(res => {
+      this.setState({currentUser: res.name})
+    })
+  };
 
 
 signIn(event){
     event.preventDefault();
-    LoginUser.logIn(this.state.email,this.state.password)
-  }
+    FirebaseHelper.logIn(this.state.email,this.state.password);
+    return browserHistory.push("/");
+  };
 
 
   render() {
@@ -47,7 +51,7 @@ signIn(event){
 
               <FormGroup>
                 <Col smOffset={2} sm={9}>
-                  <Button bsStyle="success" bsSize="small" onClick={(event) => this.signIn(event)}><Link to="/dashboard">sign in</Link></Button>
+                  <Button bsStyle="success" bsSize="small" onClick={(event) => this.signIn(event)}>sign in</Button>
                 </Col>
               </FormGroup>
             </Form>
