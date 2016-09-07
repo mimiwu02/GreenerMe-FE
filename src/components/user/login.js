@@ -18,6 +18,7 @@ class LogIn extends Component {
 signIn(event, email, password){
     event.preventDefault();
     FirebaseHelper.logIn(this.state.email,this.state.password);
+    return browserHistory.push("/");
   };
 
 
